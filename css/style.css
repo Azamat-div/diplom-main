@@ -2068,7 +2068,7 @@ section.parallax-section.hero-section .section-title h2 {
 .hero-menu_header li{
 	width:100%;
 	text-align:left;
-	color:#fff;
+	color:#000000;
 	font-family: 'Playfair Display', cursive;
 	font-size:18px;
 	margin-bottom:28px;
@@ -4771,4 +4771,19 @@ section {
 		-webkit-background-size: cover;
 		background-position: center;
 	}
+}
+.tabheader__item{
+	cursor: pointer;
+}
+li.tabheader__item.current {
+    color: #C19D60;
+}
+.tabheader{
+	cursor: pointer;
+}
+li.tabheader{
+    color: #222;
+}
+li.tabheader.current {
+    color: #C19D60;
 }
