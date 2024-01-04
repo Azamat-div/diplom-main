@@ -70,57 +70,14 @@ if ($(".tabheader__item")) {
 //slides
 if ($(".offer__slider")) {
   const slides = document.querySelectorAll(".offer__slider"),
-    prev = document.querySelector(".tc-button-prev"),
-    next = document.querySelector(".tc-button-next"),
-    total = document.querySelector("#total"),
-    current = document.querySelector("#current");
-
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  if (slides.length < 10) {
-    total.textContent = `0${slides.length}`;
-  } else {
-    total.textContent = slides.length;
-  }
-  function showSlides(n) {
-    if (n > slides.length) {
-      slideIndex = 1;
-    }
-    if (n < 1) {
-      slideIndex = slides.length;
-    }
-    slides.forEach((item) => (item.style.display = "none"));
-    slides[slideIndex - 1].style.display = "block";
-    if (slides.length > 10) {
-      current.textContent = `0${slideIndex}`;
-    } else {
-      current.textContent = slideIndex;
-    }
-  }
-  function plusSlides(n) {
-    showSlides((slideIndex += n));
-  }
-  prev.addEventListener("click", () => {
-    plusSlides(-1);
-  });
-  next.addEventListener("click", () => {
-    plusSlides(1);
-  });
-}
-if ($(".offer__slide")) {
-  const slides = document.querySelectorAll(".offer__slide"),
     prev = document.querySelector(".ec-button-prev"),
     next = document.querySelector(".ec-button-next"),
-    total = document.querySelector("#tota"),
-    current = document.querySelector("#curren");
+    left = document.querySelector(".fa-caret-left"),
+    right = document.querySelector(".fa-caret-right");
 
   let slideIndex = 1;
   showSlides(slideIndex);
-  if (slides.length < 10) {
-    total.textContent = `0${slides.length}`;
-  } else {
-    total.textContent = slides.length;
-  }
+  
   function showSlides(n) {
     if (n > slides.length) {
       slideIndex = 1;
@@ -130,11 +87,6 @@ if ($(".offer__slide")) {
     }
     slides.forEach((item) => (item.style.display = "none"));
     slides[slideIndex - 1].style.display = "block";
-    if (slides.length > 10) {
-      current.textContent = `0${slideIndex}`;
-    } else {
-      current.textContent = slideIndex;
-    }
   }
   function plusSlides(n) {
     showSlides((slideIndex += n));
@@ -146,9 +98,40 @@ if ($(".offer__slide")) {
     plusSlides(1);
   });
 }
+if ($(".offer-slide")) {
+  const slides = document.querySelectorAll(".offer-slide"),
+    prev = document.querySelector(".tc-button-prev"),
+    next = document.querySelector(".tc-button-next"),
+    left = document.querySelector(".fa-caret-left"),
+    right = document.querySelector(".fa-caret-right");
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function showSlides(n) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    slides.forEach((item) => (item.style.display = "none"));
+    slides[slideIndex - 1].style.display = "block";
+  }
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+  prev.addEventListener("click", () => {
+    plusSlides(-1);
+  });
+  next.addEventListener("click", () => {
+    plusSlides(1);
+  });
+} 
 
 //clock
-const timeEnd = "2024-01-31";
+/* if ($(".countdown")) {
+  const timeEnd = "2024-01-31";
 function getTimeRemaining(endtime) {
   const t = Date.parse(endtime) - Date.parse(new Date()),
     days = Math.floor(t / (1000 * 60 * 60 * 24)),
@@ -182,4 +165,6 @@ function setClock(selector, endtime) {
     }
   }
 }
-setClock(".timer", timeEnd);
+setClock(".countdown", timeEnd);
+}
+ */
