@@ -98,8 +98,8 @@ if ($(".offer__slider")) {
     plusSlides(1);
   });
 }
-if ($(".offer-slide")) {
-  const slides = document.querySelectorAll(".offer-slide"),
+if ($(".swiper-slide")) {
+  const slides = document.querySelectorAll(".swiper-slide"),
     prev = document.querySelector(".tc-button-prev"),
     next = document.querySelector(".tc-button-next"),
     left = document.querySelector(".fa-caret-left"),
